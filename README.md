@@ -1,53 +1,49 @@
 # BNO055_Complementary_Filter
-# IMU Orientation Estimation with BNO055
+# BNO055 Complementary Filter (Roll & Pitch)
 
-This repository contains Arduino sketches for experimenting with the **Adafruit BNO055 IMU** to estimate roll and pitch orientation.  
-The project starts with raw sensor readings and gradually moves toward more stable orientation estimates using a **complementary filter**.
-
----
-
-## Project Steps
-
-1. **Accelerometer only**  
-   - Calculate roll and pitch directly from raw accelerometer values.  
-   - Works but sensitive to noise and vibrations.
-
-2. **Gyroscope only**  
-   - Integrate angular velocity from the gyroscope to estimate orientation.  
-   - Smoother response but suffers from drift over time.
-
-3. **Complementary filter**  
-   - Combine accelerometer (long-term stability) and gyroscope (short-term accuracy).  
-   - Produces stable roll and pitch values with reduced drift and noise.
+This Arduino sketch demonstrates how to estimate **roll** and **pitch** angles using a **complementary filter** with the **BNO055 IMU**.  
+The filter fuses accelerometer and gyroscope data to achieve a more stable orientation estimate than using either sensor alone.  
 
 ---
 
-## Workflow
+## 📌 Description
+This project demonstrates three approaches for estimating **roll** and **pitch** using the BNO055 IMU:
 
-```mermaid
-flowchart LR
-    A[Accelerometer] --> C[Complementary Filter]
-    B[Gyroscope] --> C[Complementary Filter]
-    C --> D[Roll & Pitch Output]
-Features
-Interfaces with BNO055 using the Adafruit library over I²C.
+- **Accelerometer-only** → Uses raw accelerometer values with trigonometry (simple but noisy).  
+- **Gyroscope-only** → Integrates angular velocity from the gyroscope (smooth but drifts).  
+- **Complementary Filter** → Combines both sensors to balance stability and accuracy.  
 
-Demonstrates the difference between accelerometer-only, gyroscope-only, and fused orientation.
+The complementary filter leverages:  
+- **Gyroscope** for short-term smoothness.  
+- **Accelerometer** for long-term reference.  
 
-Outputs roll and pitch angles in real time via Serial Monitor.
+Final roll and pitch angles are printed in degrees to the Serial Monitor.
 
-Provides step-by-step learning for sensor fusion basics.
 
-Applications
-Understanding IMU sensor fundamentals.
+---
 
-Building orientation estimation for robotics or balance projects.
+## 🛠️ Features
+- Sensor fusion using a complementary filter.  
+- Adjustable filter coefficient `alpha` (default **0.98**).  
+- Outputs angles at ~50 Hz refresh rate.  
+- More stable than accelerometer-only or gyroscope-only estimates.  
 
-Educational reference for complementary filter implementation.
+---
 
-Hardware
-Adafruit BNO055 IMU
+## 📊 Applications
+- Balancing robots.  
+- Drone/flight controllers.  
+- IMU orientation demos.  
+- Any system needing **roll & pitch** without magnetometer (yaw excluded).  
 
-Arduino Uno / Nano (tested)
+---
 
-I²C connection (SDA, SCL)
+## 🚀 How to Use
+1. Connect the **BNO055 IMU** to your Arduino via I²C.  
+2. Upload this sketch to your board.  
+3. Open the Serial Monitor at **9600 baud**.  
+4. Tilt/move the sensor and observe smoother **roll & pitch** angle readings compared to raw-only methods.  
+
+---
+
+
