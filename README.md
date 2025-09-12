@@ -1,2 +1,2 @@
 # BNO055_Complementary_Filter
-BNO055_Complementary_Filter  Description
+This Arduino project demonstrates how to compute roll and pitch angles from the BNO055 IMU using only its raw accelerometer data. Instead of relying on the sensor’s built-in fusion algorithm, the sketch applies basic trigonometric formulas (atan2) to convert acceleration values into orientation angles in degrees. The results are streamed to the Serial Monitor in real time, providing a simple and lightweight method for understanding sensor orientation when full fusion (yaw, quaternion) is not required.
