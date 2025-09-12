@@ -1,4 +1,4 @@
-# BNO055_Complementary_Filter
+
 # BNO055 Complementary Filter (Roll & Pitch)
 
 This Arduino sketch demonstrates how to estimate **roll** and **pitch** angles using a **complementary filter** with the **BNO055 IMU**.  
