@@ -1,5 +1,6 @@
 
 # BNO055 Complementary Filter (Roll & Pitch)
+author:Kaveri Hiremath
 
 This Arduino sketch demonstrates how to estimate **roll** and **pitch** angles using a **complementary filter** with the **BNO055 IMU**.  
 The filter fuses accelerometer and gyroscope data to achieve a more stable orientation estimate than using either sensor alone.  
