@@ -6,7 +6,7 @@ This Arduino sketch demonstrates how to estimate **roll** and **pitch** angles u
 
 ---
 
-## 📌 Description
+##  Description
 This project demonstrates three approaches for estimating **roll** and **pitch** using the BNO055 IMU:
 
 - **Accelerometer-only** → Uses raw accelerometer values with trigonometry (simple but noisy).  
@@ -22,7 +22,7 @@ Final roll and pitch angles are printed in degrees to the Serial Monitor.
 
 ---
 
-## 🛠️ Features
+##  Features
 - Sensor fusion using a complementary filter.  
 - Adjustable filter coefficient `alpha` (default **0.98**).  
 - Outputs angles at ~50 Hz refresh rate.  
@@ -30,7 +30,7 @@ Final roll and pitch angles are printed in degrees to the Serial Monitor.
 
 ---
 
-## 📊 Applications
+## Applications
 - Balancing robots.  
 - Drone/flight controllers.  
 - IMU orientation demos.  
@@ -38,7 +38,7 @@ Final roll and pitch angles are printed in degrees to the Serial Monitor.
 
 ---
 
-## 🚀 How to Use
+## How to Use
 1. Connect the **BNO055 IMU** to your Arduino via I²C.  
 2. Upload this sketch to your board.  
 3. Open the Serial Monitor at **9600 baud**.  
